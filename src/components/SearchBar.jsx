@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import MovieCards from "./MovieCards";
 import MovieOption from "./MovieOption";
+import FetchData from "./FetchData";
 
-const SearchBar = ({data}) => {
+const SearchBar = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -18,7 +19,7 @@ const SearchBar = ({data}) => {
     );
   }
 
-  const moviesToShow = data ? data.slice(0, 10) : [];
+  
   
   return (
     <div className="searchbar">
@@ -44,11 +45,13 @@ const SearchBar = ({data}) => {
       </svg>
       <div className="design">
 
-      <div className="movie-container">
+     
+      {/* <div className="movie-container">
       
       <MovieOption />
         <MovieCards data={search(moviesToShow)} />
-      </div>
+      </div> */}
+      {/* <MovieCards data={search(data)} /> */}
  
       </div>
     </div>

@@ -1,17 +1,17 @@
 import React from "react";
 import Berries from "./images/PngItem_1381056 1.svg";
 import IMDB from "./images/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@ 1.svg";
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
-const MovieCards = ({ data }) => {
+const MovieCards = ({data}) => {
   return (
-    // <Link>
     <div data-testid="movie-card" className="movie-cards">
       {data &&
         data.map((movie) => {
           return (
-            
-            <div className="movies" key={movie.id}>
+            <Link to={`/moviedetails/${movie.id}`} key={movie.id} style={{textDecoration: 'none', color: 'black'}}>
+            <div className="movies">
               <img
                 data-testid="movie-poster"
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -36,7 +36,7 @@ const MovieCards = ({ data }) => {
                 {movie.genre_ids}
               </p>
             </div>
-         
+         </Link>
           );
         })}
     </div>

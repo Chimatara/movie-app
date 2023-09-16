@@ -1,7 +1,6 @@
 import React from "react";
-import MovieCards from "./MovieCards";
 
-const MovieOption = ({data}) => {
+const MovieOption = () => {
   return (
     <div>
       <div className="options">

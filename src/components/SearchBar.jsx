@@ -3,7 +3,7 @@ import MovieCards from "./MovieCards";
 import MovieOption from "./MovieOption";
 import FetchData from "./FetchData";
 
-const SearchBar = () => {
+const SearchBar = ({data}) => {
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -51,7 +51,7 @@ const SearchBar = () => {
       <MovieOption />
         <MovieCards data={search(moviesToShow)} />
       </div> */}
-      {/* <MovieCards data={search(data)} /> */}
+      <MovieCards data={search(data)} />
  
       </div>
     </div>

@@ -8,10 +8,12 @@ import { Carousel } from 'react-responsive-carousel';
 
 
 
-const Hero = ({data}) => {
+const Hero = ({data, error, loading}) => {
 
   return (
     <div className="heroi">
+       {loading && <div className='spin'>Loading....</div>}
+            {error && <div className='error'>{`We encountered a problem - ${error}`}</div>}
         <Carousel
           showThumbs={false}
           autoPlay={false}

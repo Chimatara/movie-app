@@ -9,8 +9,10 @@ const MovieCards = ({data}) => {
     <div data-testid="movie-card" className="movie-cards">
       {data &&
         data.map((movie) => {
+          // Convert the release date to UTC time
+          const releaseDateUTC = new Date(movie.release_date).toUTCString();
           return (
-            <Link to={`/moviedetails/${movie.id}`} key={movie.id} style={{textDecoration: 'none', color: 'black'}}>
+            <Link to={`/movies/${movie.id}`} key={movie.id} style={{textDecoration: 'none', color: 'black'}}>
             <div className="movies">
               <img
                 data-testid="movie-poster"
@@ -18,7 +20,7 @@ const MovieCards = ({data}) => {
                 alt="poster"
               />
               <p data-testid="movie-release-date" className="location">
-                {movie.release_date}
+                {releaseDateUTC}
               </p>
               <h6 data-testid="movie-title">{movie.title}</h6>
 

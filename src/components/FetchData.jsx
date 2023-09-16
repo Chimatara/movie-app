@@ -23,7 +23,7 @@ const FetchData = () => {
       try {
         const response = await axios.get(apiUrl);
         setData(response.data.results);
-        // console.log(response.data);
+        console.log(response.data);
         setError(null);
       } catch (err) {
         setError(err.message);
@@ -42,7 +42,7 @@ const FetchData = () => {
             <Hero data={data} />
             <MovieOption />
             <MovieCards data={moviesToShow} />
-            {/* <MovieDetails data={detailsToShow} /> */}
+            <MovieDetails data={detailsToShow} />
         </div>;
 };
 
